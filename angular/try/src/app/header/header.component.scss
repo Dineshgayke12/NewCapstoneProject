@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+// TOP NAVBAR
+.top-nav {
+    background: #2a4a79;
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+}
+
+.top-nav .profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.top-nav .profile {
+    gap: 10px;
+}
+
+.top-nav .profile span {
+    display: block;
+    color: white;
+    font-size: 15px;
+}
+
+// *************************************new
+.common-class {
+    background-color: #2a4a79f2;
+}
+
+
+// verticle
+.vertical-navbar {
+    width: 250px;
+}   
+
+.vertical-navbar .main-menu ul {
+    list-style: none;
+    padding-left: 0px;
+    padding-top: 10px;
+}
+
+.vertical-navbar .main-menu ul li {
+    padding-block: 15px;
+    padding-left: 10px;
+    border-bottom: 1px solid #aaaaaa29;
+}
+
+.vertical-navbar .main-menu ul li:hover {
+    border-left: 3px solid #d8d8d89e;
+}
+
+.vertical-navbar ul a {
+    text-decoration: none;
+}
+
+.vertical-navbar img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.vertical-submenu ul {
+    list-style: circle;
+}
+
+
+.vertical-submenu ul li {
+    padding-block: 10px;
+}
+
+
+.sidebar-left {
+    position: fixed !important;
+    left: 0px;
+    top: 77px;
+    height: 89.5vh;
+}

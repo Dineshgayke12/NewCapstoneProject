@@ -1,0 +1,120 @@
+<div class="heading">
+    <h2>Products</h2>
+    <i class="fa-solid fa-plus"></i>
+</div>
+
+
+<div class="table-container ">
+
+    <!-- serch and button -->
+    <div class="d-flex justify-content-end gap-3 mb-3">
+        <div class="order-search d-inline-block me-4">
+            <input type="text" class="py-1 border-0" pInputText placeholder="Search"
+                (input)="dt.filterGlobal(getValue($event), 'contains')">
+        </div>
+
+
+    </div>
+
+
+
+    <div class="card border-0">
+        <p-table [value]="allAvailProducts" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+            [tableStyle]="{ 'min-width': '50rem' }"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            [globalFilterFields]="['id','productName', 'price']" #dt>
+            <ng-template pTemplate="header">
+
+
+                <tr>
+                    <th scope="col">Product Name </th> 
+                    <th scope="col">Price </th> 
+                    <th scope="col">Unit</th>
+                    <th scope="col">Quntity Available</th> 
+                    <th scope="col">Action</th> 
+
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-products>
+                <tr>
+                    <td>{{ products.productName }}</td> 
+                    <td>{{ products.price }}</td>
+                    <td>{{ products.unit }}</td>
+                    <td>{{ products.productQty }}</td>
+                    
+                    <td>
+                        <div class="ms-2 me-3 d-inline-block ">
+                            <button type="button" class="btn order-btn" data-bs-toggle="modal" (click)="updateQT(products.prodid)" (click)="qtyStore(products.productQty)"  data-bs-target="#omi"><i
+                                    class="pi pi-plus" ></i><span class="px-2 pt-1">Sell Item
+                                </span></button>
+                        </div>
+                    </td>
+
+                </tr>
+            </ng-template>
+
+        </p-table>
+    </div>
+</div>
+
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded mr-2" alt="...">
+      <strong class="mr-auto">Bootstrap</strong>
+      <small class="text-muted">just now</small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      See? Just like this.
+    </div>
+  </div>
+
+
+<!-- Modal -->
+<div class="modal modal-lg fade" id="omi" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Create product order</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form" >
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="mb-3 col-6">
+                                <label for="exampleInputEmail1" class="form-label">Product</label>
+                                <input type="text" class="form-control" formControlName="productName"
+                                    id="exampleInputEmail1" aria-describedby="emailHelp" />
+                            </div>
+
+                            <div class="mb-3 col-6">
+                                <label for="exampleInputEmail1" class="form-label">Unit</label>
+                                <input type="text" class="form-control"   formControlName="unit"
+                                    id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+
+                            <div class="mb-3 col-6">
+                                <label for="exampleInputEmail1" class="form-label">Quantity</label>
+                                <input type="number" class="form-control" formControlName="productQty"
+                                    id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+
+                            <div class="mb-3 col-6">
+                                <label for="exampleInputEmail1" class="form-label">Price</label>
+                                <input type="number" class="form-control" formControlName="price"
+                                    id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit"  (click)="AddProd()" data-bs-dismiss="modal" aria-label="Close" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

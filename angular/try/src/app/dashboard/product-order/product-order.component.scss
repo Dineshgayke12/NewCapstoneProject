@@ -1,0 +1,64 @@
+// 
+.heading h2 {
+    margin-bottom: 17px;
+    color: #332b6d;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+tr th {
+    padding: 13px 1rem;
+    background-color: #F7FBFF;
+    color: #5f6870;
+    font-weight: 600;
+}
+
+tr td {
+    padding: 9px 1rem;
+    font-family: poppins;
+    font-weight: 400;
+    border: none;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+
+// table
+.table-container {
+    box-shadow: 0px 0px 5px #80808038;
+    padding-block: 15px;
+    border-radius: 4px;
+}
+
+.order-search {
+    border: 1px solid gray;
+    padding-left: 20px;
+    border-radius: 3px;
+}
+
+button.order-btn {
+    background: #355380;
+    color: white;
+}
+
+.order-search input:focus-within {
+    border: none;
+    outline: none;
+}
+
+.status-selector {
+    color: #000000;
+    background: #ffffff;
+    word-wrap: normal;
+    border-radius: 5px;
+    padding: 6px 10px;
+}
+
+
+.active-bg{
+    background-color:green ;
+}
+
+.inactive-bg{
+    background-color: blue;
+}
